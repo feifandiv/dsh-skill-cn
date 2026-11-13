@@ -1,5 +1,8 @@
 # dsh-skill-cn · 中文技能搜索
 
+[![npm](https://img.shields.io/npm/v/@fanfan4589/dsh-skill-cn)](https://www.npmjs.com/package/@fanfan4589/dsh-skill-cn) [![license](https://img.shields.io/npm/l/@fanfan4589/dsh-skill-cn)](./LICENSE)
+
+
 给 DSH 的 `/` 菜单加一个**中文检索源**：输入 `/与神对话` 就能搜到 `ff-yushen-duihua`。
 
 > **定位｜克制的小功能补丁。** 只做这一件事，不改 DSH 主体：不替换内置槽位与布局、不改内核行为、不碰其他插件的数据。升级 DSH 一般无需跟着改；关掉或卸载即回到官方状态。
