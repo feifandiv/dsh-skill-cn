@@ -2,6 +2,8 @@
 
 给 DSH 的 `/` 菜单加一个**中文检索源**：输入 `/与神对话` 就能搜到 `ff-yushen-duihua`。
 
+> **定位｜克制的小功能补丁。** 只做这一件事，不改 DSH 主体：不替换内置槽位与布局、不改内核行为、不碰其他插件的数据。升级 DSH 一般无需跟着改；关掉或卸载即回到官方状态。
+
 ## 为什么需要它
 
 DSH 的技能名被强制为 `[a-z0-9-]`（中文名在注册阶段就被丢弃），而 `/` 菜单只按**技能名**做「不区分大小写的有序子序列」匹配（`rankByName`）。所以 `/与神对话` 永远匹配不到。
@@ -44,11 +46,11 @@ node --test test/       # 单测 + 冒烟
 
 已挂进 `desktop` profile：
 
-- 依赖：`~/.dsh/profiles/desktop/package.json` → `"@feifan/dsh-skill-cn": "link:/Users/feifan/FEIFAN/08-系统/08DSH插件/dsh-skill-cn"`
-- bundle：`dsh.profile.bundles` 里加了 `@feifan/dsh-skill-cn`
-- 挂载：`~/.dsh/profiles/desktop/node_modules/@feifan/dsh-skill-cn` → 本目录
+- 依赖：`~/.dsh/profiles/desktop/package.json` → `"@fanfan4589/dsh-skill-cn": "link:/Users/feifan/FEIFAN/08-系统/08DSH插件/dsh-skill-cn"`
+- bundle：`dsh.profile.bundles` 里加了 `@fanfan4589/dsh-skill-cn`
+- 挂载：`~/.dsh/profiles/desktop/node_modules/@fanfan4589/dsh-skill-cn` → 本目录
 - 首次安装需重启 DSH（Host 启动时才组合插件图）；之后改 `client.js` 刷新页面即可。
 
 ## 卸载
 
-删掉 profile 里的三处登记（`package.json` 的 dependencies/bundles、`pnpm-lock.yaml` 的 importers 条目、`node_modules/@feifan/dsh-skill-cn` 符号链接），重启即可。
+删掉 profile 里的三处登记（`package.json` 的 dependencies/bundles、`pnpm-lock.yaml` 的 importers 条目、`node_modules/@fanfan4589/dsh-skill-cn` 符号链接），重启即可。
