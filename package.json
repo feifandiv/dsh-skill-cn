@@ -1,0 +1,59 @@
+{
+  "name": "@fanfan4589/dsh-skill-cn",
+  "version": "1.0.0",
+  "description": "Search DeepSeek Harness skills by their Chinese name in the / menu (adds a second search source with Chinese labels).",
+  "type": "module",
+  "license": "MIT",
+  "author": "feifandiv",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/match.test.mjs && node test/smoke.mjs"
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-input-trigger",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-api-remotes"
+      ]
+    }
+  },
+  "homepage": "https://github.com/feifandiv/dsh-skill-cn#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feifandiv/dsh-skill-cn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/feifandiv/dsh-skill-cn/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "skill",
+    "chinese"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
